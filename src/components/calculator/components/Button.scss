@@ -1,0 +1,21 @@
+.button{
+    background: #f2f0ed;
+    border-right: 1px solid #dadada;
+    border-top: 1px solid #dadada;
+    font-size: 15px;
+    transition: ease-in 0.6s;
+  
+    &:hover{
+        transition: ease-out 0.5s;
+        background: #dadada;
+    }
+    &:active{
+        background: #8e949c;
+        transition: ease-in 0.1s;
+    }
+}
+
+.grid-column{
+    &-2{ grid-column: span 2; }
+    &-3{ grid-column: span 3; }
+}

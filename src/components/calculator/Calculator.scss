@@ -1,7 +1,19 @@
+.title{
+    color: #f2f0ed;
+    font: 300 19px/2.9 "RobotoMono";
+    margin-left: -106px;
+    text-align: center;
+}
 .cal{
     background: #f2f0ed;
     border-radius: 5px;
+    box-shadow: 24px 24px 40px #26292d;
+    margin: 6% auto 0 auto;
     overflow: hidden;
-    height: 350px;
-    width: 240px;
+    height: 400px;
+    width: 290px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 1fr 61px 61px 61px 61px 61px;
 }

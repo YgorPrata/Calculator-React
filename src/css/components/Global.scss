@@ -5,9 +5,12 @@
 }
 
 body{
-  align-items: center;
   background: #31353b;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
+}
+
+button{
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
 }
