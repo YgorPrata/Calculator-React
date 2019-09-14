@@ -9,28 +9,28 @@ export default class Calculator extends Component{
             <div>
                 <div className="cal">
                     <Display value="100" />
-                    <Button label="AC" columns="auto" />
-                    <Button label="<" columns="auto" />
-                    <Button label="<" columns="auto" />
-                    <Button label="/" columns="auto" />
-                    <Button label="7" columns="auto" />
-                    <Button label="8" columns="auto" />
-                    <Button label="9" columns="auto" />
-                    <Button label="*" columns="auto" />
-                    <Button label="4" columns="auto" />
-                    <Button label="5" columns="auto" />
-                    <Button label="6" columns="auto" />
-                    <Button label="-" columns="auto" />
-                    <Button label="1" columns="auto" />
-                    <Button label="2" columns="auto" />
-                    <Button label="3" columns="auto" />
-                    <Button label="+" columns="auto" />
-                    <Button label="0" columns={ 2 } />
-                    <Button label="." columns="auto" />
-                    <Button label="=" columns="auto" />
+                    <Button label="AC" />
+                    <Button label="<" />
+                    <Button label="<" />
+                    <Button label="/"  operators= { true } />
+                    <Button label="7" />
+                    <Button label="8" />
+                    <Button label="9" />
+                    <Button label="*" operators= { true }  />
+                    <Button label="4" />
+                    <Button label="5" />
+                    <Button label="6" />
+                    <Button label="-" operators= { true }  />
+                    <Button label="1" />
+                    <Button label="2" />
+                    <Button label="3" />
+                    <Button label="+" operators= { true }  />
+                    <Button label="0" grid2={ 2 } />
+                    <Button label="."  />
+                    <Button label="=" operators= { true }  />
                 </div>
 
-                <h1 className="title">React Calculator</h1>
+                <p className="title">React Calculator</p>
             </div>
         )
     }

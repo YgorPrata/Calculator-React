@@ -15,7 +15,20 @@
     }
 }
 
-.grid-column{
+.grid{
     &-2{ grid-column: span 2; }
-    &-3{ grid-column: span 3; }
+}
+.operators{
+    background: #2a4861;
+    border-left: 1px solid #182a38;
+    border-right: 1px solid #182a38;
+    border-top: 1px solid #182a38;
+    color: #fff;
+
+    &:hover{
+        background: #233c50;
+    }
+    &:active{
+        background: #182a38;
+    }
 }
