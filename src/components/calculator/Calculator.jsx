@@ -3,28 +3,46 @@ import './Calculator.scss'
 import Display from './components/Display'
 import Button from './components/Button'
 
+const initialState ={
+    displayValue: '0',
+    clearDisplay: false,
+    operation: null,
+    values: [ 0, 0 ],
+    current: 0
+}
+
 export default class Calculator extends Component{
+    state = { ...initialState }
 
     constructor(props){
         super(props)
         this.addDigit = this.addDigit.bind(this)
+        this.setOperator = this.setOperator.bind(this)
+        this.clearDisplay = this.clearDisplay.bind(this)
     }
 
     addDigit(digit){
-        console.log(digit)
+       if(digit === '.' && this.state.displayValue.includes('.'))
+           return
+
+       const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
+       const currentValue = clearDisplay ? '' : this.state.displayValue
+       const displayValue = currentValue + digit
+
+       this.setState({ displayValue, clearDisplay: false })
     }
     setOperator(operator){
         console.log(operator)
     }
     clearDisplay(){
-        console.log('clean')
+      this.setState({ ...initialState })
     }
 
     render(){
         return(
             <div>
                 <div className="cal">
-                    <Display value="100" />
+                    <Display value={ this.state.displayValue } />
 
                     <Button label="AC" click={ this.clearDisplay } />
                     <Button label="<=" click={ this.setOperator } />
