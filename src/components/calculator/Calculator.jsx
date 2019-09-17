@@ -21,6 +21,13 @@ export default class Calculator extends Component{
         this.clearDisplay = this.clearDisplay.bind(this)
     }
 
+    clearDisplay(){
+        this.setState({ ...initialState })
+    }
+
+    removeDigit(){
+    }
+
     addDigit(digit){
        if(digit === '.' && this.state.displayValue.includes('.')){
            return
@@ -46,11 +53,32 @@ export default class Calculator extends Component{
             this.setState({ operation, current: 1, clearDisplay: true })
         }
         else{
-            
+            const equals = operation === '='
+            const currentOperation = this.state.operation
+            const values = [ ...this.state.values ]
+
+            switch(currentOperation){
+                case '+' : values[0] = values[0] + values[1]
+                    break
+                case '-' : values[0] = values[0] - values[1]
+                    break
+                case '*' : values[0] = values[0] * values[1]
+                    break
+                case '/' : values[0] = values[0] / values[1]
+                    break
+                default : return 
+            }
+
+            values[1] = 0
+
+            this.setState({
+                displayValue: values[0],
+                operation: equals ? null : operation,
+                current: equals ? 0 : 1,
+                clearDisplay: !equals,
+                values
+            })
         }
-    }
-    clearDisplay(){
-      this.setState({ ...initialState })
     }
 
     render(){
@@ -60,7 +88,7 @@ export default class Calculator extends Component{
                     <Display value={ this.state.displayValue } />
 
                     <Button label="AC" click={ this.clearDisplay } />
-                    <Button label="<=" click={ this.setOperator } />
+                    <Button label="" click={ this.removeDigit } />
                     <Button label="" click={ this.setOperator } />
                     <Button label="/" click={ this.setOperator }  operators />
 
